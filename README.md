@@ -1,6 +1,5 @@
 ## Introduction
 --------------------
-<img src = http://imgur.com/dccjWQu>
 * Rooster allows you to sleep longer.  
 Rooster determines when you should wake up according to traffic.  
 For instance, if there is an accident along your route, Rooster wakes you up earlier.  
