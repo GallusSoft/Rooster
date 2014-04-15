@@ -1,0 +1,212 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Rooster</title>
+  <meta name="description" content="The smartest alarm clock that ever lived.">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Rooster</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">The smartest alarm clock that ever lived.</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/GallusSoft/Rooster/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/GallusSoft/Rooster/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/GallusSoft/Rooster" class="code">View Rooster on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h2>
+<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h2>
+
+<hr><ul>
+<li><p>Rooster allows you to sleep longer.<br>
+Rooster determines when you should wake up according to traffic.<br>
+For instance, if there is an accident along your route, Rooster wakes you up earlier.<br>
+No matter the situation, Rooster wakes you up exactly on time.  </p></li>
+<li><p>In this way, <strong>Rooster is smart.</strong></p></li>
+<li>This is an alpha release of Rooster to the open source community. I welcome your help and support. If you are a common user, I apologize for my verbosity.</li>
+</ul><h2>
+<a name="phantomjs-praise-and-mobile-platforms" class="anchor" href="#phantomjs-praise-and-mobile-platforms"><span class="octicon octicon-link"></span></a>PhantomJS Praise and Mobile Platforms</h2>
+
+<hr><ul>
+<li><p>Rooster is built in Qt.<br>
+Rooster uses PhantomJS.<br>
+PhantomJS uses Qt's QtWebKit.  </p></li>
+<li><p>This makes Rooster redundant. However, a look PhantomJS' source code shows absolute mastery of both Qt and QtWebKit. My use of PhantomJS is equivalent to using a sledgehammer to drive a nail; I believe it's best to streamline PhantomJS (and of course still give them credit) rather than write my own scraper from scratch.</p></li>
+<li><p>With all that said, my use of PhantomJS, and therefore my non-use of Android WebKit/iOS WebKit is what is keeping Rooster from mobile platforms. So believe me, writing, or finding, a scraper for both Android and iOS is in the works. Perhaps the community could help.</p></li>
+</ul><h2>
+<a name="windows" class="anchor" href="#windows"><span class="octicon octicon-link"></span></a>Windows</h2>
+
+<hr><ul>
+<li>Rooster has been tested on various versions of Windows 7. It <em>should</em> work fine on Windows 8.</li>
+</ul><h2>
+<a name="os-x" class="anchor" href="#os-x"><span class="octicon octicon-link"></span></a>OS X</h2>
+
+<hr><ul>
+<li>As soon as I get in front of a Mac, you guys get Rooster, too.</li>
+</ul><h2>
+<a name="linux" class="anchor" href="#linux"><span class="octicon octicon-link"></span></a>Linux</h2>
+
+<hr><ul>
+<li>Currently, Rooster is distributed for Linux using git and source tarballs. With that said, getting Rooster to work on Linux is still relatively easy:</li>
+</ul><p><strong>Linux Requirements:</strong></p>
+
+<hr><ul>
+<li>
+<strong>GCC</strong><br>
+On Ubuntu:<br><code>sudo apt-get install gcc</code><br>
+</li>
+<li>
+<strong>OpenGL</strong><br>
+For some strange reason, when I tested $make on my Ubuntu 13.10 testbox, I got an error related to the absence of an OpenGL lib:<br><code>/usr/bin/ld: cannot find -lGL.</code><br>
+I’m still investigating why this lib is needed.<br>
+Anyhow, on Ubuntu, this fixes it:<br><code>sudo apt-get install libglu1-mesa-dev -y</code>
+</li>
+<li>
+<p><strong>PhantomJS</strong><br>
+On Ubuntu:<br><code>sudo apt-get install phantomjs</code><br>
+Rooster has only been tested using PhantomJS 1.9.0.<br>
+To alpha testers: If you’re using a different version, please search:  </p>
+
+<ol>
+<li>A route that takes less than an hour.<br>
+</li>
+<li>A route that takes more than an hour.<br>
+… and report back with your PhantomJS version, and whether or not it worked. If it didn’t, please run Rooster in a terminal (./rooster) and provide to me your output.</li>
+</ol>
+</li>
+<li><p><strong>Qt</strong><br>
+Rooster is built and tested using Qt 5.2.1. It requires at least Qt 5.
+Installing Qt is easy, however it is important to note where you install it, because you’re going to be using that path later. Download Qt 5.2.1 from <a href="http://qt-project.org/downloads">here</a> and run the installer. Again, note where you install Qt.</p></li>
+</ul><h2>
+<a name="build-for-linux" class="anchor" href="#build-for-linux"><span class="octicon octicon-link"></span></a>Build for Linux</h2>
+
+<hr><ul>
+<li><p>Assuming you only have one version of Qt installed, build instructions are (I hope) the same for both 32-bit and 64-bit:</p></li>
+<li>
+<p><code>cd</code> to the directory that contains rooster.tar.gz  </p>
+
+<ol>
+<li>
+<code>tar xzvf rooster.tar.gz</code> (if you've downloaded the tarball)<br>
+</li>
+<li>
+<code>cd rooster-0.1</code><br>
+</li>
+<li>
+<code>/path/to/Qt5.2.1/5.2.1/gcc&lt;whatever is there&gt;/bin/qmake rooster.pro -r -spec linux-g++</code><br>
+</li>
+<li><code>make</code></li>
+<li>Enjoy! You may either double-click rooster or ./rooster</li>
+</ol>
+</li>
+</ul><h2>
+<a name="to-do" class="anchor" href="#to-do"><span class="octicon octicon-link"></span></a>To Do</h2>
+
+<hr><ul>
+<li><p><strong>Support for common audio codecs</strong><br>
+Currently, I’m using QSoundEffect to play the sound file. The reason for this is it reduces the latency between the end of the sound loop and the beginning to microseconds. The downside of this is QSoundEffect only uses .wav files. QMediaPlayer takes many common codecs, however QMediaPlayer seems to dump its buffer, creating undesirable delay. I’m open to ideas.</p></li>
+<li><p><strong>Implement System Volume control.</strong><br>
+Currently, Rooster depends on you the user to appropriately set your system volume.</p></li>
+<li><p><strong>Fix Linux Icon</strong><br>
+Currently, I don't see a way to apply Rooster's icon without a make install script.<br>
+Also, the icon could use an upgrade.  </p></li>
+<li><p><strong>Multiple Routes</strong><br>
+Currently, Rooster relies on Google to choose the best route. Just a bit more code and a menu and a button will allow multiple routes.</p></li>
+<li><p><strong>Public Transit</strong><br>
+Currently, Rooster only uses driving directions (I’m looking at you, NYC).</p></li>
+<li><p><strong>Presets</strong><br>
+One for work, one for when the kid has to be driven to school, et cetera.</p></li>
+<li><p><strong>Clean up the Windows UI</strong><br>
+On some boxes, it’s perfect. On others, everything is small and vertical alignment is off.</p></li>
+<li><p><strong>A Better UI</strong><br>
+The current program could be an alarm creation dialog, which closes into a more aesthetically pleasing widget. For instance: a Rooster that sleeps, has its eyes half-open when he’s checking traffic, and gets freakishly wide-eyed and wide-mouthed when he’s blaring it’s alarm. But I’m not sure if I want to get all Mr. Paperclip (Clippy) on you guys. Skins would be nice, though.</p></li>
+<li><p><strong>Mobile platforms</strong><br>
+As I said, writing, or finding, a PhantomJS-like solution for mobile is the highest hurdle.</p></li>
+<li><p><strong>Code refinement</strong><br>
+This is my first C++ program. It is also my first Qt program. I am sure I could at least use more pointers. Some of you might find swaths of bad practice. I welcome your constructive criticism and scrutiny, for it is best to cut bad habits at the nub.</p></li>
+<li><p><strong>Windows Libs Cleanup</strong>
+I'm seeing reports that windeployqt includes more libs than it should. Furthermore, because of the way I set up my Windows dev box, two microsoft c++ libs could go as well. Also, it would be nice to stick all the libs into one folder.</p></li>
+<li><p><strong>Add --version</strong>
+Because it's not official unless it's --version official</p></li>
+<li><p><strong>Autodeploy</strong>
+Not checking and rechecking that everything has been included would be nice.</p></li>
+<li><p><strong>Math</strong><br><em>Perhaps</em> something like an <a href="http://en.wikipedia.org/wiki/Exponential_growth">exponential growth/decay formula</a> could be used to predict traffic, which would result in less traffic pings.</p></li>
+</ul><h2>
+<a name="bugs" class="anchor" href="#bugs"><span class="octicon octicon-link"></span></a>Bugs</h2>
+
+<hr><ul>
+<li>Honestly, I’ve spent so much time on Rooster that if you found an unlisted functional bug, I’d be pleasantly surprised and very interested.<br>
+</li>
+<li>If PhantomJS isn’t found by Rooster, it could segfault or the alarm could set itself to a random value. In Windows, creating this scenario would require you to move phantomjs.exe out of the app’s directory. In Linux, it’s something similar. In essence you the user would know you’d be causing a problem; the same goes for any of the app directory’s files, with the exception of the sound file. In that case, Rooster will kindly prompt you to locate the a sound file.<br>
+</li>
+<li>Another possibility is: If you run the program while your RAM is maxxed, the program might close.<br>
+</li>
+</ul><h2>
+<a name="snooze" class="anchor" href="#snooze"><span class="octicon octicon-link"></span></a>Snooze</h2>
+
+<hr><ul>
+<li>Here's the way I see it: A snooze button defeats the purpose of Rooster. Personally, I keep my alarm clock across the room, forcing me to wake up before I turn the alarm off. With that said, I don't mind having snooze as an option. But barring the case of a severe traffic jam, I don't see how Rooster can both have Snooze and not be almost equal to the dumb alarm clocks we use daily. Again, I welcome other perspectives on this subject.<br>
+</li>
+</ul><h2>
+<a name="future-insight" class="anchor" href="#future-insight"><span class="octicon octicon-link"></span></a>Future Insight</h2>
+
+<hr><ul>
+<li>I'm in a computer engineering university program right now. Wouldn't it be neat if I made this a physical alarm clock as a final project and posted the schematics online?<br>
+</li>
+</ul><h2>
+<a name="special-thanks" class="anchor" href="#special-thanks"><span class="octicon octicon-link"></span></a>Special Thanks</h2>
+
+<hr><ul>
+<li>Construction workers on I-95.<br><a href="https://www.youtube.com/watch?v=-5wpm-gesOY">Time Library Coders</a><br>
+All my parents<br>
+Sarah Autumn<br>
+Mr. S.<br>
+The PhantomJS team<br>
+The Google Maps team<br>
+</li>
+</ul>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/GallusSoft" class="avatar"><img src="https://avatars2.githubusercontent.com/u/7112866?s=60" width="48" height="48"/></a> <a href="https://github.com/GallusSoft">GallusSoft</a> maintains <a href="https://github.com/GallusSoft/Rooster">Rooster</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="http://pages.github.com/">GitHub Pages</a><br/>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/GallusSoft/Rooster/tarball/master" class="tar">tar</a><a href="https://github.com/GallusSoft/Rooster/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
