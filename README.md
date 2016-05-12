@@ -1,3 +1,7 @@
+## Please Note
+--------------------
+Google has changed the way their maps API works, and the permissions thereof. Because of this, Rooster's core function is broken. It seems a Google for Business account is now needed to fix this issue. Further research is pending.
+
 ## Introduction
 --------------------
 * Rooster allows you to sleep longer.  
